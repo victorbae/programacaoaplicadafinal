@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+	styleClass="background" stylesheets="@../principal/application.css"
+	xmlns="http://javafx.com/javafx/9.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="br.edu.unoesc.controllers.FilialController">
+	<children>
+		<Pane prefHeight="600.0" prefWidth="800.0"
+			styleClass="background" stylesheets="@../principal/application.css">
+			<children>
+				<Label layoutX="336.0" layoutY="42.0" text="Filiais"
+					textFill="WHITE">
+					<font>
+						<Font name="Impact" size="46.0" />
+					</font>
+				</Label>
+				<TableView fx:id="tblFiliais" layoutX="67.0"
+					layoutY="135.0" prefHeight="330.0" prefWidth="666.0"
+					styleClass="background1"
+					stylesheets="@../principal/application.css">
+					<columns>
+						<TableColumn fx:id="tblCodigo" editable="false"
+							prefWidth="76.80001831054688" text="Codigo" />
+						<TableColumn fx:id="tblNome" editable="false"
+							prefWidth="123.99996948242188" text="Nome" />
+						<TableColumn fx:id="tblCidade" editable="false"
+							prefWidth="125.60003662109375" text="Cidade" />
+						<TableColumn fx:id="tblEndereco" editable="false"
+							prefWidth="179.20001220703125" text="Endereço" />
+						<TableColumn fx:id="tblTelefone" editable="false"
+							minWidth="0.0" prefWidth="163.20001220703125" text="Telefone" />
+					</columns>
+				</TableView>
+				<Button fx:id="btNovaFilial" layoutX="335.0" layoutY="496.0"
+					mnemonicParsing="false" onAction="#novaFilial" prefHeight="42.0"
+					prefWidth="130.0" text="Novo">
+					<font>
+						<Font name="Impact" size="19.0" />
+					</font>
+				</Button>
+				<Button fx:id="btExcluirFilial" layoutX="603.0"
+					layoutY="496.0" mnemonicParsing="false" onAction="#excluir"
+					prefHeight="42.0" prefWidth="130.0" text="Excluir ">
+					<font>
+						<Font name="Impact" size="19.0" />
+					</font>
+				</Button>
+				<Button fx:id="btAlterarFilial" layoutX="67.0"
+					layoutY="496.0" mnemonicParsing="false" onAction="#alterar"
+					prefHeight="42.0" prefWidth="130.0" text="Alterar ">
+					<font>
+						<Font name="Impact" size="19.0" />
+					</font>
+				</Button>
+			</children>
+		</Pane>
+	</children>
+</AnchorPane>

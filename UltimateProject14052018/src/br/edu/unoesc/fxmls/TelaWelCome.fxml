@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+	styleClass="background" stylesheets="@../principal/application.css"
+	xmlns="http://javafx.com/javafx/9.0.1"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Label layoutX="206.0" layoutY="224.0" text="Rain Bebidas "
+			textAlignment="CENTER" textFill="#ffffffba">
+			<font>
+				<Font name="Impact" size="70.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>

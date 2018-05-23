@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane styleClass="background"
+	stylesheets="@../principal/application.css"
+	xmlns="http://javafx.com/javafx/9.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="br.edu.unoesc.controllers.PrimeiraTelaController">
+	<center>
+		<Pane fx:id="bpPrincipal" prefHeight="600.0" prefWidth="800.0"
+			styleClass="background" stylesheets="@../principal/application.css"
+			BorderPane.alignment="CENTER" />
+	</center>
+	<left>
+		<Pane prefHeight="600.0" prefWidth="125.0"
+			styleClass="background1" stylesheets="@../principal/application.css"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btnFuncionario" layoutY="111.0"
+					mnemonicParsing="false" onAction="#Funcionario" prefHeight="38.0"
+					prefWidth="125.0" stylesheets="@../principal/application.css"
+					styleClass="button" text="Funcionários">
+					<font>
+						<Font name="Impact" size="16.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnCategoria" layoutY="187.0"
+					mnemonicParsing="false" onAction="#Categoria" prefHeight="38.0"
+					prefWidth="125.0" stylesheets="@../principal/application.css"
+					styleClass="button" text="Categorias">
+					<font>
+						<Font name="Impact" size="16.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnProduto" layoutY="262.0"
+					mnemonicParsing="false" onAction="#Produto" prefHeight="38.0"
+					prefWidth="125.0" stylesheets="@../principal/application.css"
+					styleClass="button" text="Produtos">
+					<font>
+						<Font name="Impact" size="16.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnFilial" layoutY="338.0"
+					mnemonicParsing="false" onAction="#Filial" prefHeight="38.0"
+					prefWidth="125.0" stylesheets="@../principal/application.css"
+					styleClass="button" text="Filiais">
+					<font>
+						<Font name="Impact" size="16.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnVoltar" layoutX="8.0" layoutY="553.0"
+					mnemonicParsing="false" onAction="#Voltar" text="Back in Black">
+					<font>
+						<Font name="Impact" size="16.0" />
+					</font>
+				</Button>
+			</children>
+		</Pane>
+	</left>
+</BorderPane>

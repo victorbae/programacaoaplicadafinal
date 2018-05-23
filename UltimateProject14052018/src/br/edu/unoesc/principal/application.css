@@ -1,0 +1,13 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+    .background{
+    	 -fx-background-image: url("file:img/madeira.jpg") ;
+    }
+
+	.background1{
+    	 -fx-background-image: url("file:img/madeira1.jpg") ;
+    }
+    
+    .button{
+    	-fx-background-color: white;
+    	-fx-opacity: 0.7;
+    }
