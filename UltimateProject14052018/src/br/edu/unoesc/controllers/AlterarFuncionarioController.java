@@ -10,6 +10,7 @@ import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFuncionarios;
 import br.edu.unoesc.models.Filial;
 import br.edu.unoesc.models.Funcionario;
+import br.edu.unoesc.models.FuncionarioBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,12 +73,10 @@ public class AlterarFuncionarioController {
 	}
 
 	void montarFuncionarioParaAdd() {
-		funcionarioalt.setNome(String.valueOf(tfNome.getText()));
-		funcionarioalt.setCidade(String.valueOf(tfCidade.getText()));
-		funcionarioalt.setCargo(String.valueOf(tfCargo.getText()));
-		funcionarioalt.setDatanascimento(dtNascimento.getValue());
-		funcionarioalt.setTelefone(Long.valueOf(String.valueOf(tfTelefone.getText())));
-		funcionarioalt.setFilial(cbxFilial.getValue());
+		this.funcionarioalt = new FuncionarioBuilder().setNome(String.valueOf(tfNome.getText()))
+				.setCidade(String.valueOf(tfCidade.getText())).setCargo(String.valueOf(tfCargo.getText()))
+				.setDatanascimento(dtNascimento.getValue()).setTelefone(Long.valueOf(tfTelefone.getText()))
+				.setFilial(cbxFilial.getValue()).getFuncionario();
 	}
 
 	Funcionario montaFuncionarioDeEstatico() {

@@ -7,6 +7,7 @@ import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.banco.FilialBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.models.Filial;
+import br.edu.unoesc.models.FilialBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,12 +55,9 @@ public class CadastroFilialController {
 	}
 
 	void montarFilialParaAdd() {
-		filial = new Filial();
-		filial.setCidade(String.valueOf(tfCidade.getText()));
-		filial.setCodFilial(Integer.valueOf(geraCodFilial()));
-		filial.setEndereco(String.valueOf(tfEndereco.getText()));
-		filial.setNome(String.valueOf(tfNome.getText()));
-		filial.setTelefone(Long.valueOf(String.valueOf(tfTelefone.getText())));
+		this.filial = new FilialBuilder().setCidade(String.valueOf(tfCidade.getText()))
+				.setCodigo(Integer.valueOf(geraCodFilial())).setEndereco(String.valueOf(tfEndereco.getText()))
+				.setNome(String.valueOf(tfNome.getText())).setTelefone(Long.valueOf(tfTelefone.getText())).getFilial();
 	}
 
 	void voltaTelaFilial() {

@@ -7,6 +7,7 @@ import br.edu.unoesc.banco.FilialBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFiliais;
 import br.edu.unoesc.models.Filial;
+import br.edu.unoesc.models.FilialBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -51,10 +52,9 @@ public class AlterarFilialController {
 	}
 
 	void montarFilialParaAdd() {
-		filialalt.setCidade(String.valueOf(tfCidade.getText()));
-		filialalt.setEndereco(String.valueOf(tfEndereco.getText()));
-		filialalt.setNome(String.valueOf(tfNome.getText()));
-		filialalt.setTelefone(Long.valueOf(String.valueOf(tfTelefone.getText())));
+		this.filialalt = new FilialBuilder().setCidade(String.valueOf(tfCidade.getText()))
+				.setEndereco(String.valueOf(tfEndereco.getText())).setNome(String.valueOf(tfNome.getText()))
+				.setTelefone(Long.valueOf(tfTelefone.getText())).getFilial();
 	}
 
 	Filial montaFilialDeEstatico() {

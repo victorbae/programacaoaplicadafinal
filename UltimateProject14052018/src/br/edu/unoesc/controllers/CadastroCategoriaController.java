@@ -45,7 +45,6 @@ public class CadastroCategoriaController {
 	}
 
 	void populaCategoria() {
-		this.categoria = new Categoria();
 		this.categoria = new CategoriaBuilder().setCodigo(geraCodCategoria()).setNome(String.valueOf(tfNome.getText()))
 				.getCategoria();
 	}

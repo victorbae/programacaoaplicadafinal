@@ -7,6 +7,7 @@ import br.edu.unoesc.banco.CategoriaBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaCategorias;
 import br.edu.unoesc.models.Categoria;
+import br.edu.unoesc.models.CategoriaBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +59,7 @@ public class AlterarCategoriaController {
 	}
 
 	void montaCategoriaParaAdd() {
-		categoriaalt.setNome(String.valueOf(tfNome.getText()));
+		this.categoriaalt = new CategoriaBuilder().setNome(String.valueOf(tfNome.getText())).getCategoria();
 	}
 
 	void montarTela() {

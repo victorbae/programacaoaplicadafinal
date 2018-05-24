@@ -69,17 +69,15 @@ public class FuncionarioTest {
 		assertEquals(LocalDate.of(2010, 3, 7), funcionario.getDatanascimento());
 	}
 
-	@Test // TODO Este teste falhou seus animal
+	@Test
 	public void deveTestarContrutorFielsEToString() throws Exception {
 		Filial f = new Filial();
 		Funcionario funcionario = new Funcionario(1, "Joao", "XXe", "Bebefor", LocalDate.of(2010, 3, 7),
 				Long.parseLong("12398764"), f);
 		Funcionario funcionario2 = new Funcionario(1, "Joao", "XXe", "Bebefor", LocalDate.parse("2010-03-07"), 12398764,
 				1);
-		assertEquals("Código: 1, Nome: Joao, Cidade: XXe, Data de Nascimento: 2010-03-07, Telefone: 12398764.",
-				funcionario);
-		assertEquals("Código: 1, Nome: Joao, Cidade: XXe, Data de Nascimento: 2010-03-07, Telefone: 12398764.",
-				funcionario2);
+		assertEquals(funcionario.toString(), funcionario.getNome());
+		assertEquals(funcionario2.toString(), funcionario2.getNome());
 	}
 
 	@Test

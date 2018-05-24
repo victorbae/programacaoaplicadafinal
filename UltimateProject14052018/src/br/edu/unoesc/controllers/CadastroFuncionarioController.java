@@ -10,6 +10,7 @@ import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.models.Filial;
 import br.edu.unoesc.models.Funcionario;
+import br.edu.unoesc.models.FuncionarioBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +45,7 @@ public class CadastroFuncionarioController {
 
 	@FXML
 	private Button btCancelar;
-	private Funcionario funcionario;
+	private Funcionario funcionario = new Funcionario();
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
 	private FuncionarioDAO funcionariobd = new FuncionarioBanco();
 	private FilialDAO filialdao = new FilialArquivo();
@@ -70,14 +71,10 @@ public class CadastroFuncionarioController {
 	}
 
 	void populaFuncionario() {
-		funcionario = new Funcionario();
-		funcionario.setNome(String.valueOf(tfNome.getText()));
-		funcionario.setCidade(String.valueOf(tfCidade.getText()));
-		funcionario.setCargo(String.valueOf(tfCargo.getText()));
-		funcionario.setDatanascimento(dtNascimento.getValue());
-		funcionario.setTelefone(Long.valueOf(tfTelefone.getText()));
-		funcionario.setFilial(cbxFilial.getValue());
-		funcionario.setCodigo(geraCodFuncionario());
+		this.funcionario = new FuncionarioBuilder().setNome(String.valueOf(tfNome.getText()))
+				.setCidade(String.valueOf(tfCidade.getText())).setCargo(String.valueOf(tfCargo.getText()))
+				.setDatanascimento(dtNascimento.getValue()).setTelefone(Long.valueOf(tfTelefone.getText()))
+				.setFilial(cbxFilial.getValue()).setCodigo(geraCodFuncionario()).getFuncionario();
 	}
 
 	private void populaCombo() {
