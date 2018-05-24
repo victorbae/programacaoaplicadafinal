@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.ProdutoController">
+   <children>
+      <Pane layoutX="-2.0" layoutY="-3.0" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css">
+         <children>
+            <TableView fx:id="tvproduto" layoutX="67.0" layoutY="135.0" prefHeight="330.0" prefWidth="666.0" styleClass="background1" stylesheets="@../principal/application.css">
+               <columns>
+                  <TableColumn fx:id="tbcCodigo" editable="false" prefWidth="61.0" text="Codigo" />
+                  <TableColumn fx:id="tbcNome" editable="false" prefWidth="107.0" text="Nome" />
+                  <TableColumn fx:id="tbcCategoria" editable="false" prefWidth="100.0" text="Categoria" />
+                  <TableColumn fx:id="tbcPreco" editable="false" prefWidth="111.0" text="Preco" />
+                  <TableColumn fx:id="tbcQuantidadeEstoque" editable="false" prefWidth="167.0" text="Quantidade de Estoque" />
+                  <TableColumn fx:id="tbcDescricao" editable="false" minWidth="7.0" prefWidth="119.0" text="Descricao" />
+               </columns>
+            </TableView>
+            <Button fx:id="btnNovoProduto" layoutX="335.0" layoutY="496.0" mnemonicParsing="false" onAction="#NovoProduto" prefHeight="42.0" prefWidth="130.0" stylesheets="@../principal/application.css" text="Novo">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnExcluir" layoutX="603.0" layoutY="496.0" mnemonicParsing="false" onAction="#Excluir" prefHeight="42.0" prefWidth="130.0" stylesheets="@../principal/application.css" text="Excluir">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAlterarProduto" layoutX="67.0" layoutY="496.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="42.0" prefWidth="130.0" stylesheets="@../principal/application.css" text="Alterar">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="315.0" layoutY="42.0" text="Produtos" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="46.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

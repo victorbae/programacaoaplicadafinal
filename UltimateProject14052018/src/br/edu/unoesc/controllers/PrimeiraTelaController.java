@@ -69,7 +69,7 @@ public class PrimeiraTelaController {
 	@FXML
 	void Produto(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/br/edu/unoesc/fxmls/TelaBosta.fxml"));
+		loader.setLocation(getClass().getResource("/br/edu/unoesc/fxmls/TelaProduto.fxml"));
 		try {
 			AnchorPane agenciaView = (AnchorPane) loader.load();
 			MainMain.root.setCenter(agenciaView);

@@ -1,5 +1,7 @@
 package br.edu.unoesc.models;
 
+import br.edu.unoesc.estaticosparatelasv.EstaticosParaProdutos;
+
 public class Produto {
 
 	private Integer codigo;
@@ -8,6 +10,7 @@ public class Produto {
 	private Double preco;
 	private Integer quantidadeestoque;
 	private String descricao;
+	private Integer codcategoria;
 
 	public Produto(Integer codigo, String nome, Categoria categoria, Double preco, Integer quantidadeestoque,
 			String descricao) {
@@ -19,6 +22,16 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
+	public Produto(Integer codigo, String nome, Integer codcategoria, Double preco, Integer quantidadeestoque,
+			String descricao) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.preco = preco;
+		this.quantidadeestoque = quantidadeestoque;
+		this.descricao = descricao;
+		this.setCategoria(EstaticosParaProdutos.achaCategoria(codcategoria, this.categoria));
+	}
+
 	public Produto() {
 	}
 
@@ -28,6 +41,14 @@ public class Produto {
 
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
+	}
+
+	public Integer getCodcategoria() {
+		return codcategoria;
+	}
+
+	public void setCodcategoria(Integer codcategoria) {
+		this.codcategoria = codcategoria;
 	}
 
 	public String getNome() {

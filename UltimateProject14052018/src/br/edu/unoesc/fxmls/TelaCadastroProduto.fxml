@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.CadastroProdutoController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="800.0" styleClass="background1" stylesheets="@../principal/application.css">
+         <children>
+            <Label layoutX="208.0" layoutY="46.0" text="Cadastrar Produtos" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="46.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfQuantidadeEstoque" layoutX="400.0" layoutY="267.0" prefHeight="33.0" prefWidth="233.0" />
+            <TextField fx:id="tfDescricao" layoutX="401.0" layoutY="314.0" prefHeight="33.0" prefWidth="233.0" />
+            <TextField fx:id="tfNome" layoutX="401.0" layoutY="167.0" prefHeight="33.0" prefWidth="233.0" />
+            <TextField fx:id="tfPreco" layoutX="400.0" layoutY="217.0" prefHeight="33.0" prefWidth="233.0" />
+            <ComboBox fx:id="cbxCategoria" layoutX="401.0" layoutY="369.0" prefHeight="33.0" prefWidth="233.0" />
+            <Label layoutX="178.0" layoutY="275.0" text="Quantidade de Estoque:" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Console" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="227.0" layoutY="322.0" text="Descricao:" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Console" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="377.0" text="Categoria:" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Console" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="246.0" layoutY="175.0" prefHeight="18.0" prefWidth="77.0" text="  Nome:" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Console" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="256.0" layoutY="225.0" text="Preco:" textFill="WHITE">
+               <font>
+                  <Font name="Lucida Console" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btSalvar" layoutX="568.0" layoutY="517.0" mnemonicParsing="false" onAction="#salvar" prefHeight="42.0" prefWidth="130.0" stylesheets="@../principal/application.css" text="Salvar">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="btCancelar" layoutX="191.0" layoutY="509.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="42.0" prefWidth="130.0" stylesheets="@../principal/application.css" text="Cancelar">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
