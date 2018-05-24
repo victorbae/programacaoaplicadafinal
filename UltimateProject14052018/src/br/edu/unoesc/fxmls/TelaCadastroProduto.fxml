@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.CadastroProdutoController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="800.0" styleClass="background1" stylesheets="@../principal/application.css">
+      <Pane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css">
          <children>
             <Label layoutX="208.0" layoutY="46.0" text="Cadastrar Produtos" textFill="WHITE">
                <font>

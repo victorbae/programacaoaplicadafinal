@@ -45,15 +45,14 @@ public class CadastroProdutoController {
 
 	private ProdutoDAO produtodao = new ProdutoArquivo();
 	private ProdutoDAO produtobd = new ProdutoBanco(); /// Meche no Banco
-	// private FilialDAO filialbd = new FilialBanco(); desnecessario ate o presente
-	// momento
+
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
 	private List<Produto> produtos;
 
 	@FXML
 	private void initialize() {
 		populaCombo();
-		cbxCategoria.setPromptText("Categoria");
+		cbxCategoria.setPromptText("Escolha uma Categoria");
 
 	}
 

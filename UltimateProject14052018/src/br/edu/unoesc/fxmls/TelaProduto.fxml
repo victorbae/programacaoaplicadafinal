@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.ProdutoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.ProdutoController">
    <children>
-      <Pane layoutX="-2.0" layoutY="-3.0" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css">
+      <Pane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css">
          <children>
             <TableView fx:id="tvproduto" layoutX="67.0" layoutY="135.0" prefHeight="330.0" prefWidth="666.0" styleClass="background1" stylesheets="@../principal/application.css">
                <columns>

@@ -1,7 +1,6 @@
 package br.edu.unoesc.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.arquivos.FuncionarioArquivo;

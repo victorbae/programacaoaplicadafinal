@@ -1,9 +1,12 @@
 package br.edu.unoesc.models;
 
+import java.io.Serializable;
+
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaProdutos;
 
-public class Produto {
+public class Produto implements Serializable {
 
+	private static final long serialVersionUID = -7016083357666340769L;
 	private Integer codigo;
 	private String nome;
 	private Categoria categoria;

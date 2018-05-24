@@ -42,7 +42,6 @@ public class AlterarProdutoController {
 	@FXML
 	private Button btCancelar;
 
-	private Categoria categoria = new Categoria();
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
 
 	private Produto produtoalt = new Produto();
