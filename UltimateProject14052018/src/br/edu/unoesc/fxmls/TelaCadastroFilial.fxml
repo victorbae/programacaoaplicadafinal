@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -7,65 +8,66 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
-	styleClass="background" stylesheets="@../principal/application.css"
-	xmlns="http://javafx.com/javafx/9.0.1"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="br.edu.unoesc.controllers.CadastroFilialController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.CadastroFilialController">
 	<children>
 		<Pane prefHeight="600.0" prefWidth="800.0">
 			<children>
-				<Label layoutX="221.0" layoutY="46.0" prefHeight="63.0"
-					prefWidth="358.0" text="Cadastro de Filiais" textFill="WHITE">
+				<Label layoutX="221.0" layoutY="46.0" prefHeight="63.0" prefWidth="358.0" text="Cadastro de Filiais" textFill="WHITE">
 					<font>
 						<Font name="Impact" size="46.0" />
 					</font>
 				</Label>
-				<Label layoutX="233.0" layoutY="157.0" text="Nome:"
-					textFill="WHITE">
+				<Label layoutX="233.0" layoutY="157.0" text="Nome:" textFill="WHITE">
 					<font>
 						<Font name="Lucida Console" size="16.0" />
 					</font>
 				</Label>
-				<Label layoutX="213.0" layoutY="200.0" text="Cidade:"
-					textFill="WHITE">
+				<Label layoutX="213.0" layoutY="200.0" text="Cidade:" textFill="WHITE">
 					<font>
 						<Font name="Lucida Console" size="16.0" />
 					</font>
 				</Label>
-				<Label layoutX="194.0" layoutY="245.0" text="Endereço:"
-					textFill="WHITE">
+				<Label layoutX="194.0" layoutY="245.0" text="Endereço:" textFill="WHITE">
 					<font>
 						<Font name="Lucida Console" size="16.0" />
 					</font>
 				</Label>
-				<Label layoutX="194.0" layoutY="292.0" text="Telefone:"
-					textFill="WHITE">
+				<Label layoutX="194.0" layoutY="292.0" text="Telefone:" textFill="WHITE">
 					<font>
 						<Font name="Lucida Console" size="16.0" />
 					</font>
 				</Label>
-				<TextField fx:id="tfNome" layoutX="348.0" layoutY="149.0"
-					prefHeight="33.0" prefWidth="233.0" />
-				<TextField fx:id="tfCidade" layoutX="348.0"
-					layoutY="192.0" prefHeight="33.0" prefWidth="233.0" />
-				<TextField fx:id="tfEndereco" layoutX="348.0"
-					layoutY="237.0" prefHeight="33.0" prefWidth="233.0" />
-				<TextField fx:id="tfTelefone" layoutX="348.0"
-					layoutY="284.0" prefHeight="33.0" prefWidth="233.0" />
-				<Button fx:id="btAddFilial" layoutX="514.0" layoutY="517.0"
-					mnemonicParsing="false" onAction="#addFilial" prefHeight="42.0"
-					prefWidth="130.0" text="Salvar">
+				<TextField fx:id="tfNome" layoutX="348.0" layoutY="149.0" prefHeight="33.0" prefWidth="233.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+				<TextField fx:id="tfCidade" layoutX="348.0" layoutY="192.0" prefHeight="33.0" prefWidth="233.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+				<TextField fx:id="tfEndereco" layoutX="348.0" layoutY="237.0" prefHeight="33.0" prefWidth="233.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+				<TextField fx:id="tfTelefone" layoutX="348.0" layoutY="284.0" prefHeight="33.0" prefWidth="233.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+				<Button fx:id="btAddFilial" layoutX="514.0" layoutY="517.0" mnemonicParsing="false" onAction="#addFilial" prefHeight="42.0" prefWidth="130.0" text="Salvar">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
 				</Button>
-				<Button fx:id="btCancelar" layoutX="182.0" layoutY="517.0"
-					mnemonicParsing="false" onAction="#cancelar" prefHeight="42.0"
-					prefWidth="130.0" text="Cancelar">
+				<Button fx:id="btCancelar" layoutX="182.0" layoutY="517.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="42.0" prefWidth="130.0" text="Cancelar">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
 				</Button>
 			</children>
 		</Pane>

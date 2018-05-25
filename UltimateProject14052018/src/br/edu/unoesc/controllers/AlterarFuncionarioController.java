@@ -62,8 +62,8 @@ public class AlterarFuncionarioController {
 	@FXML
 	void salvar(ActionEvent event) {
 		montarFuncionarioParaAdd();
-		funcionariobd.alterar(funcionarioalt);
 		funcionariodao.alterar(funcionarioalt);
+		funcionariobd.alterar(funcionarioalt);
 		voltarTela();
 	}
 
@@ -73,10 +73,10 @@ public class AlterarFuncionarioController {
 	}
 
 	void montarFuncionarioParaAdd() {
-		this.funcionarioalt = new FuncionarioBuilder().setNome(String.valueOf(tfNome.getText()))
-				.setCidade(String.valueOf(tfCidade.getText())).setCargo(String.valueOf(tfCargo.getText()))
-				.setDatanascimento(dtNascimento.getValue()).setTelefone(Long.valueOf(tfTelefone.getText()))
-				.setFilial(cbxFilial.getValue()).getFuncionario();
+		this.funcionarioalt = new FuncionarioBuilder().setCodigo(funcionarioalt.getCodigo())
+				.setNome(String.valueOf(tfNome.getText())).setCidade(String.valueOf(tfCidade.getText()))
+				.setCargo(String.valueOf(tfCargo.getText())).setDatanascimento(dtNascimento.getValue())
+				.setTelefone(Long.valueOf(tfTelefone.getText())).setFilial(cbxFilial.getValue()).getFuncionario();
 	}
 
 	Funcionario montaFuncionarioDeEstatico() {

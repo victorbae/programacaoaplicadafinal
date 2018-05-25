@@ -6,34 +6,30 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
-	styleClass="background" stylesheets="@../principal/application.css"
-	xmlns="http://javafx.com/javafx/9.0.1"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="br.edu.unoesc.controllers.TelaNaoExcluirController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.TelaNaoExcluirController">
 	<children>
 		<Pane prefHeight="600.0" prefWidth="800.0">
 			<children>
-				<Label layoutX="318.0" layoutY="218.0" text="Aviso!"
-					textFill="#b20000">
+				<Label layoutX="318.0" layoutY="218.0" text="Aviso!" textFill="#b20000">
 					<font>
 						<Font name="Impact" size="66.0" />
 					</font>
 				</Label>
-				<Label layoutX="145.0" layoutY="333.0"
-					text="Impossível excluir esta filial enquanto ela possuir funcionarios !¡!"
-					textFill="WHITE">
+				<Label layoutX="136.0" layoutY="333.0" text="Impossivel excluir esta Categoria enquanto houver produtos nela !¡!" textFill="WHITE">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
 				</Label>
-				<Button fx:id="btVoltar" layoutX="335.0" layoutY="498.0"
-					mnemonicParsing="false" onAction="#voltar" prefHeight="42.0"
-					prefWidth="130.0" text="Voltar">
+				<Button fx:id="btVoltar" layoutX="335.0" layoutY="498.0" mnemonicParsing="false" onAction="#voltar" prefHeight="42.0" prefWidth="130.0" text="Voltar">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
 				</Button>
+            <Label layoutX="141.0" layoutY="356.0" text="Impossivel excluir esta Filial enquanto houver funcionarios nela !¡!" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Label>
 			</children>
 		</Pane>
 	</children>

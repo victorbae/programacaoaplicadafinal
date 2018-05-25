@@ -52,9 +52,9 @@ public class AlterarFilialController {
 	}
 
 	void montarFilialParaAdd() {
-		this.filialalt = new FilialBuilder().setCidade(String.valueOf(tfCidade.getText()))
-				.setEndereco(String.valueOf(tfEndereco.getText())).setNome(String.valueOf(tfNome.getText()))
-				.setTelefone(Long.valueOf(tfTelefone.getText())).getFilial();
+		this.filialalt = new FilialBuilder().setCodigo(filialalt.getCodFilial())
+				.setCidade(String.valueOf(tfCidade.getText())).setEndereco(String.valueOf(tfEndereco.getText()))
+				.setNome(String.valueOf(tfNome.getText())).setTelefone(Long.valueOf(tfTelefone.getText())).getFilial();
 	}
 
 	Filial montaFilialDeEstatico() {
@@ -71,8 +71,8 @@ public class AlterarFilialController {
 	@FXML
 	void salvarFilial(ActionEvent event) {
 		montarFilialParaAdd();
-		filialbd.alterar(filialalt);
 		filialdao.alterar(filialalt);
+		filialbd.alterar(filialalt);
 		voltarTela();
 	}
 

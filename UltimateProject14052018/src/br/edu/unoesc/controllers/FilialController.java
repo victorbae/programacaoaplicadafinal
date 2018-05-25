@@ -5,6 +5,7 @@ import java.io.IOException;
 import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.arquivos.FuncionarioArquivo;
 import br.edu.unoesc.banco.FilialBanco;
+import br.edu.unoesc.banco.FuncionarioBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFiliais;
@@ -53,6 +54,7 @@ public class FilialController {
 	private FilialDAO filialdao = new FilialArquivo();
 	private Filial filial = new Filial();
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
+	private FuncionarioDAO funcionariobd = new FuncionarioBanco();
 	private FilialDAO filialbd = new FilialBanco(); /// Meche no Banco
 
 	@FXML
@@ -109,7 +111,7 @@ public class FilialController {
 	}
 
 	boolean verificaSePodeExcluir() {
-		for (Funcionario funcionario : funcionariodao.listar()) {
+		for (Funcionario funcionario : funcionariobd.listar()) {
 			if (funcionario.getFilial().getCodFilial().equals(filial.getCodFilial())) {
 				return false;
 			}

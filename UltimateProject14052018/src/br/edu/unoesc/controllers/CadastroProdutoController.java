@@ -3,8 +3,8 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 import java.util.List;
 
-import br.edu.unoesc.arquivos.CategoriaArquivo;
 import br.edu.unoesc.arquivos.ProdutoArquivo;
+import br.edu.unoesc.banco.CategoriaBanco;
 import br.edu.unoesc.banco.ProdutoBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.daos.ProdutoDAO;
@@ -46,7 +46,8 @@ public class CadastroProdutoController {
 	private ProdutoDAO produtodao = new ProdutoArquivo();
 	private ProdutoDAO produtobd = new ProdutoBanco(); /// Meche no Banco
 
-	private CategoriaDAO categoriadao = new CategoriaArquivo();
+	// private CategoriaDAO categoriadao = new CategoriaArquivo();
+	private CategoriaDAO categoriabd = new CategoriaBanco();
 	private List<Produto> produtos;
 
 	@FXML
@@ -81,7 +82,7 @@ public class CadastroProdutoController {
 	}
 
 	private void populaCombo() {
-		for (Categoria categoria : categoriadao.listar()) {
+		for (Categoria categoria : categoriabd.listar()) {
 			cbxCategoria.getItems().add(categoria);
 		}
 	}

@@ -59,7 +59,8 @@ public class AlterarCategoriaController {
 	}
 
 	void montaCategoriaParaAdd() {
-		this.categoriaalt = new CategoriaBuilder().setNome(String.valueOf(tfNome.getText())).getCategoria();
+		this.categoriaalt = new CategoriaBuilder().setCodigo(categoriaalt.getCodigo())
+				.setNome(String.valueOf(tfNome.getText())).getCategoria();
 	}
 
 	void montarTela() {

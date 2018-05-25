@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,54 +9,44 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
-	styleClass="background" stylesheets="@../principal/application.css"
-	xmlns="http://javafx.com/javafx/9.0.1"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="br.edu.unoesc.controllers.CategoriaController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unoesc.controllers.CategoriaController">
 	<children>
-		<Pane prefHeight="600.0" prefWidth="800.0"
-			styleClass="background" stylesheets="@../principal/application.css">
+		<Pane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../principal/application.css">
 			<children>
-				<TableView fx:id="tvCategoria" layoutX="67.0"
-					layoutY="135.0" onMouseClicked="#selecionaCategoria"
-					prefHeight="330.0" prefWidth="666.0" styleClass="background1"
-					stylesheets="@../principal/application.css">
+				<TableView fx:id="tvCategoria" layoutX="67.0" layoutY="135.0" onMouseClicked="#selecionaCategoria" prefHeight="330.0" prefWidth="666.0" styleClass="background1" stylesheets="@../principal/application.css">
 					<columns>
-						<TableColumn fx:id="tcId" editable="false"
-							prefWidth="154.39993286132812" text="Codigo" />
-						<TableColumn fx:id="tcNome" editable="false"
-							minWidth="0.0" prefWidth="516.0000762939453" text="Nome" />
+						<TableColumn fx:id="tcId" editable="false" prefWidth="42.0" text="Id" />
+						<TableColumn fx:id="tcNome" editable="false" minWidth="0.0" prefWidth="594.4000244140625" text="Nome" />
 					</columns>
 				</TableView>
-				<Button fx:id="btnNovaCategoria" layoutX="335.0"
-					layoutY="496.0" mnemonicParsing="false"
-					onAction="#AdicionarCategoria" prefHeight="42.0" prefWidth="130.0"
-					text="Novo" textAlignment="CENTER">
+				<Button fx:id="btnNovaCategoria" layoutX="335.0" layoutY="496.0" mnemonicParsing="false" onAction="#AdicionarCategoria" prefHeight="42.0" prefWidth="130.0" text="Novo" textAlignment="CENTER">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
 				</Button>
-				<Button fx:id="btnExcluir" layoutX="603.0" layoutY="496.0"
-					mnemonicParsing="false" onAction="#Excluir" prefHeight="42.0"
-					prefWidth="130.0" text="Excluir" textAlignment="CENTER">
+				<Button fx:id="btnExcluir" layoutX="603.0" layoutY="496.0" mnemonicParsing="false" onAction="#Excluir" prefHeight="42.0" prefWidth="130.0" text="Excluir" textAlignment="CENTER">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
 				</Button>
-				<Label layoutX="296.0" layoutY="42.0" text="Categorias"
-					textFill="WHITE">
+				<Label layoutX="296.0" layoutY="42.0" text="Categorias" textFill="WHITE">
 					<font>
 						<Font name="Impact" size="46.0" />
 					</font>
 				</Label>
-				<Button fx:id="btnAlterarCategoria" layoutX="67.0"
-					layoutY="496.0" mnemonicParsing="false"
-					onAction="#AlterarCategoria" prefHeight="42.0" prefWidth="130.0"
-					text="Alterar" textAlignment="CENTER">
+				<Button fx:id="btnAlterarCategoria" layoutX="67.0" layoutY="496.0" mnemonicParsing="false" onAction="#AlterarCategoria" prefHeight="42.0" prefWidth="130.0" text="Alterar" textAlignment="CENTER">
 					<font>
 						<Font name="Impact" size="19.0" />
 					</font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
 				</Button>
 			</children>
 		</Pane>

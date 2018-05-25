@@ -1,13 +1,15 @@
 package br.edu.unoesc.controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
 import br.edu.unoesc.banco.CategoriaBanco;
+import br.edu.unoesc.banco.ProdutoBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
+import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaCategorias;
 import br.edu.unoesc.models.Categoria;
+import br.edu.unoesc.models.Produto;
 import br.edu.unoesc.principal.MainMain;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -42,13 +44,13 @@ public class CategoriaController {
 	private Categoria categoria = new Categoria();
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
 	private CategoriaDAO categoriabd = new CategoriaBanco(); /// Meche no Banco
+	private ProdutoDAO produtobd = new ProdutoBanco();
 
 	@FXML
 	private void initialize() {
 		tcId.setCellValueFactory(new PropertyValueFactory<Categoria, Integer>("codigo"));
 		tcNome.setCellValueFactory(new PropertyValueFactory<Categoria, String>("nome"));
-		List<Categoria> categorias = categoriabd.listar();
-		tvCategoria.setItems(FXCollections.observableArrayList(categorias));
+		tvCategoria.setItems(FXCollections.observableArrayList(categoriabd.listar()));
 	}
 
 	@FXML
@@ -79,10 +81,34 @@ public class CategoriaController {
 	@FXML
 	void Excluir(ActionEvent event) {
 		montaCategoria();
-		categoriabd.excluir(categoria);
-		categoriadao.excluir(this.categoria);
-		tvCategoria.getItems().remove(categoria);
-		tvCategoria.refresh();
+		if (verificaSePodeExcluir()) {
+			categoriabd.excluir(categoria);
+			categoriadao.excluir(this.categoria);
+			tvCategoria.getItems().remove(categoria);
+			tvCategoria.refresh();
+		} else {
+			telaNaoPodeExcluir();
+		}
+	}
+
+	boolean verificaSePodeExcluir() {
+		for (Produto produto : produtobd.listar()) {
+			if (produto.getCategoria().getCodigo().equals(categoria.getCodigo())) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	void telaNaoPodeExcluir() {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/br/edu/unoesc/fxmls/TelaNaoPodeExcluir.fxml"));
+		try {
+			AnchorPane agenciaView = (AnchorPane) loader.load();
+			MainMain.root.setCenter(agenciaView);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	@FXML
