@@ -10,6 +10,7 @@ import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaProdutos;
 import br.edu.unoesc.models.Categoria;
 import br.edu.unoesc.models.Produto;
+import br.edu.unoesc.models.ProdutoBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -84,11 +85,10 @@ public class AlterarProdutoController {
 	}
 
 	void montarProdutoParaAdd() {
-		produtoalt.setNome(String.valueOf(tfNome.getText()));
-		produtoalt.setDescricao(String.valueOf(tfDescricao.getText()));
-		produtoalt.setQuantidadeestoque(Integer.valueOf(tfQuantidadeEstoque.getText()));
-		produtoalt.setPreco(Double.valueOf(String.valueOf(tfPreco.getText())));
-		produtoalt.setCategoria(cbxCategoria.getValue());
+		produtoalt = new ProdutoBuilder().setNome(String.valueOf(tfNome.getText()))
+				.setDescricao(String.valueOf(tfDescricao.getText())).setPreco(Double.valueOf(tfPreco.getText()))
+				.setQuantidadeestoque(Integer.valueOf(tfQuantidadeEstoque.getText()))
+				.setCategoria(cbxCategoria.getValue()).setCodigo(produtoalt.getCodigo()).getProduto();
 	}
 
 	Produto montaProdutoDeEstatico() {

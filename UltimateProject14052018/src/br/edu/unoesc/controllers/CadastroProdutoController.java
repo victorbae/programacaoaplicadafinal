@@ -10,6 +10,7 @@ import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.models.Categoria;
 import br.edu.unoesc.models.Produto;
+import br.edu.unoesc.models.ProdutoBuilder;
 import br.edu.unoesc.principal.MainMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,13 +73,10 @@ public class CadastroProdutoController {
 	}
 
 	void populaProduto() {
-		produto = new Produto();
-		produto.setNome(String.valueOf(tfNome.getText()));
-		produto.setDescricao(String.valueOf(tfDescricao.getText()));
-		produto.setPreco(Double.valueOf(tfPreco.getText()));
-		produto.setQuantidadeestoque(Integer.valueOf(tfQuantidadeEstoque.getText()));
-		produto.setCategoria(cbxCategoria.getValue());
-		produto.setCodigo(geraCodProduto());
+		produto = new ProdutoBuilder().setNome(String.valueOf(tfNome.getText()))
+				.setDescricao(String.valueOf(tfDescricao.getText())).setPreco(Double.valueOf(tfPreco.getText()))
+				.setQuantidadeestoque(Integer.valueOf(tfQuantidadeEstoque.getText()))
+				.setCategoria(cbxCategoria.getValue()).setCodigo(geraCodProduto()).getProduto();
 	}
 
 	private void populaCombo() {

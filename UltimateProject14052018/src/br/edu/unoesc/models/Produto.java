@@ -13,7 +13,6 @@ public class Produto implements Serializable {
 	private Double preco;
 	private Integer quantidadeestoque;
 	private String descricao;
-	private Integer codcategoria;
 
 	public Produto(Integer codigo, String nome, Categoria categoria, Double preco, Integer quantidadeestoque,
 			String descricao) {
@@ -44,14 +43,6 @@ public class Produto implements Serializable {
 
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
-	}
-
-	public Integer getCodcategoria() {
-		return codcategoria;
-	}
-
-	public void setCodcategoria(Integer codcategoria) {
-		this.codcategoria = codcategoria;
 	}
 
 	public String getNome() {
