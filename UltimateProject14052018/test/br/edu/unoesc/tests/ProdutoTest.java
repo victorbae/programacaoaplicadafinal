@@ -65,4 +65,5 @@ public class ProdutoTest {
 
 		assertEquals(produto.toString(), produto.getNome());
 	}
+
 }

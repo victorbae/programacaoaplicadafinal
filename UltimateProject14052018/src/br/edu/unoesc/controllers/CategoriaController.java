@@ -41,6 +41,7 @@ public class CategoriaController {
 
 	@FXML
 	private Button btnAlterarCategoria;
+
 	private Categoria categoria = new Categoria();
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
 	private CategoriaDAO categoriabd = new CategoriaBanco(); /// Meche no Banco

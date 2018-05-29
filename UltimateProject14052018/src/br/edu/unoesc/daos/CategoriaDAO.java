@@ -5,6 +5,7 @@ import java.util.List;
 import br.edu.unoesc.models.Categoria;
 
 public interface CategoriaDAO {
+
 	void inserir(Categoria categoria);
 
 	void excluir(Categoria categoria);

@@ -15,7 +15,6 @@ public class MecheNoBanco {
 	private static String passwd = "root";
 	private static String url = "jdbc:mysql://" + server + ":" + port + "/" + database
 			+ "?useSSL=false&useTimezone=true&serverTimezone=UTC";
-
 	private static Connection con;
 	private static Statement stmt;
 

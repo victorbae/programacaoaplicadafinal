@@ -43,7 +43,6 @@ public class CadastroProdutoController {
 	private Button btCancelar;
 
 	private Produto produto;
-
 	private ProdutoDAO produtodao = new ProdutoArquivo();
 	private ProdutoDAO produtobd = new ProdutoBanco(); /// Meche no Banco
 

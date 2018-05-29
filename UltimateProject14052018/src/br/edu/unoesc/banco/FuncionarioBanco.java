@@ -10,6 +10,7 @@ import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.models.Funcionario;
 
 public class FuncionarioBanco implements FuncionarioDAO {
+
 	private String tabela = "funcionarios";
 
 	@Override

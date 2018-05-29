@@ -17,6 +17,7 @@ public class Funcionario implements Serializable {
 	private Integer codigo;
 
 	public Funcionario() {
+		super();
 	}
 
 	public Funcionario(Integer i, String string1, String string2, String string3, LocalDate date, long l, Integer j) {

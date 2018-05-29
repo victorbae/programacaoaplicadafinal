@@ -45,6 +45,7 @@ public class CadastroFuncionarioController {
 
 	@FXML
 	private Button btCancelar;
+
 	private Funcionario funcionario = new Funcionario();
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
 	private FuncionarioDAO funcionariobd = new FuncionarioBanco();

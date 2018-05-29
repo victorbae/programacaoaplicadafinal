@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainMain extends Application {
+
 	public static BorderPane root;
 	EstaticosParaFiliais filiais = new EstaticosParaFiliais();
 

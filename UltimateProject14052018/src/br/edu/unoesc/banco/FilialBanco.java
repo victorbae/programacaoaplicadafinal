@@ -29,7 +29,6 @@ public class FilialBanco implements FilialDAO {
 				+ filial.getCidade() + "', endereco ='" + filial.getEndereco() + "', telefone = "
 				+ filial.getTelefone();
 		System.out.println(query);
-
 		MecheNoBanco.alterar(tabela, query, filial.getCodFilial());
 	}
 

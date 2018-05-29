@@ -12,6 +12,7 @@ public class Filial implements Serializable {
 	private Long telefone;
 
 	public Filial() {
+		super();
 	}
 
 	public Filial(Integer codFilial, String nome, String cidade, String endereco, Long telefone) {
@@ -64,6 +65,11 @@ public class Filial implements Serializable {
 	}
 
 	@Override
+	public String toString() {
+		return nomefilial;
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -88,8 +94,4 @@ public class Filial implements Serializable {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return nomefilial;
-	}
 }

@@ -3,7 +3,6 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
-import br.edu.unoesc.arquivos.FuncionarioArquivo;
 import br.edu.unoesc.banco.FilialBanco;
 import br.edu.unoesc.banco.FuncionarioBanco;
 import br.edu.unoesc.daos.FilialDAO;
@@ -53,7 +52,7 @@ public class FilialController {
 
 	private FilialDAO filialdao = new FilialArquivo();
 	private Filial filial = new Filial();
-	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
+	// private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
 	private FuncionarioDAO funcionariobd = new FuncionarioBanco();
 	private FilialDAO filialbd = new FilialBanco(); /// Meche no Banco
 

@@ -26,7 +26,6 @@ public class CategoriaBanco implements CategoriaDAO {
 	public void alterar(Categoria categoria) {
 		String query = "cod = " + categoria.getCodigo() + ", nome = '" + categoria.getNome() + "'";
 		System.out.println(query);
-
 		MecheNoBanco.alterar(tabela, query, categoria.getCodigo());
 	}
 

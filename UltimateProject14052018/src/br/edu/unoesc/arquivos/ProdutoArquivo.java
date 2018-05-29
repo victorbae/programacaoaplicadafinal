@@ -10,7 +10,6 @@ public class ProdutoArquivo implements ProdutoDAO {
 	private CuidaDosArquivos<Produto> arqui = new CuidaDosArquivos<>("produto.ser");
 
 	public void inserir(Produto produto) {
-
 		List<Produto> produtos = arqui.recuperar();
 		produtos.add(produto);
 		arqui.gravar(produtos);

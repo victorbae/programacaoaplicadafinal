@@ -6,10 +6,10 @@ import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.models.Funcionario;
 
 public class FuncionarioArquivo implements FuncionarioDAO {
+
 	private CuidaDosArquivos<Funcionario> arqui = new CuidaDosArquivos<>("funcionario.ser");
 
 	public void inserir(Funcionario funcionario) {
-
 		List<Funcionario> funcionarios = arqui.recuperar();
 		funcionarios.add(funcionario);
 		arqui.gravar(funcionarios);

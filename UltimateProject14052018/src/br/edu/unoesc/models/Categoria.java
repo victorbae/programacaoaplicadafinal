@@ -3,6 +3,7 @@ package br.edu.unoesc.models;
 import java.io.Serializable;
 
 public class Categoria implements Serializable {
+
 	private static final long serialVersionUID = -1981566665515592665L;
 	private Integer codigo;
 	private String nome;

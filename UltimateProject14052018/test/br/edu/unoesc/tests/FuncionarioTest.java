@@ -1,8 +1,6 @@
 package br.edu.unoesc.tests;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 
@@ -80,15 +78,4 @@ public class FuncionarioTest {
 		assertEquals(funcionario2.toString(), funcionario2.getNome());
 	}
 
-	@Test
-	public void deveTestarHashCodeEEquals() throws Exception {
-		Filial f = new Filial();
-		Funcionario funcionario = new Funcionario(1, "Joao", "XXe", "Bebefor", LocalDate.of(2010, 3, 7),
-				Long.parseLong("12398764"), f);
-
-		assertTrue(funcionario.hashCode() != 0);
-		assertTrue(funcionario.getFilial().hashCode() != 0);
-		assertTrue(funcionario.equals(funcionario));
-		assertFalse(funcionario.equals(funcionario.getFilial()));
-	}
 }

@@ -9,6 +9,7 @@ import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.models.Produto;
 
 public class ProdutoBanco implements ProdutoDAO {
+
 	private String tabela = "produtos";
 
 	@Override
@@ -17,13 +18,11 @@ public class ProdutoBanco implements ProdutoDAO {
 				"" + produto.getCodigo() + ", '" + produto.getNome() + "', '" + produto.getCategoria().getCodigo()
 						+ "', '" + produto.getPreco() + "', '" + produto.getQuantidadeestoque() + "', '"
 						+ produto.getDescricao() + "'");
-
 	}
 
 	@Override
 	public void excluir(Produto produto) {
 		MecheNoBanco.excluir("produtos", produto.getCodigo());
-
 	}
 
 	@Override
@@ -33,7 +32,6 @@ public class ProdutoBanco implements ProdutoDAO {
 						+ produto.getCategoria().getCodigo() + "', preco= '" + produto.getPreco() + "', qntestoque='"
 						+ produto.getQuantidadeestoque() + "', descricao='" + produto.getDescricao() + "'",
 				produto.getCodigo());
-
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.models.Categoria;
 
 public class CategoriaArquivo implements CategoriaDAO {
+
 	private CuidaDosArquivos<Categoria> arqui = new CuidaDosArquivos<>("categoria.ser");
 
 	@Override

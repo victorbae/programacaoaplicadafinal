@@ -5,6 +5,7 @@ import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.models.Filial;
 
 public class EstaticosParaFiliais {
+
 	public static Filial filialEstatica;
 
 	public static Filial achaFilial(Integer codigoFilial, Filial filial) {

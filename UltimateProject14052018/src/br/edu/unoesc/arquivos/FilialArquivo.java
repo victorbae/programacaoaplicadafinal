@@ -6,10 +6,10 @@ import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.models.Filial;
 
 public class FilialArquivo implements FilialDAO {
+
 	private CuidaDosArquivos<Filial> arqui = new CuidaDosArquivos<>("filial.ser");
 
 	public void inserir(Filial filial) {
-
 		List<Filial> filials = arqui.recuperar();
 		filials.add(filial);
 		arqui.gravar(filials);

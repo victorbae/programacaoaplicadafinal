@@ -5,6 +5,7 @@ import java.util.List;
 import br.edu.unoesc.models.Funcionario;
 
 public interface FuncionarioDAO {
+
 	void inserir(Funcionario funcionario);
 
 	void alterar(Funcionario funcionario);
