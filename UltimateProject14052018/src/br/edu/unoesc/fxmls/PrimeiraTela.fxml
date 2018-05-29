@@ -56,16 +56,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
 				</Button>
-            <Label layoutX="20.0" layoutY="14.0" text="Rain Bebidas">
+            <Label layoutX="1.0" layoutY="14.0" text="Rain Bebidas">
                <font>
-                  <Font name="Impact" size="16.0" />
+                  <Font name="Impact" size="23.0" />
                </font>
                <textFill>
-                  <RadialGradient centerX="0.6422222561306423" centerY="0.5572519083969466" focusAngle="148.78" radius="0.29439251890806395">
+                  <RadialGradient centerX="0.4822222391764322" centerY="1.0" focusDistance="0.009345847869587587" radius="0.8271027591740974">
                      <stops>
-                        <Stop color="WHITE" />
-                        <Stop color="#cf2525" offset="0.01374045801526718" />
-                        <Stop color="WHITE" offset="1.0" />
+                        <Stop color="#ffffff72" />
+                        <Stop color="#ffffff72" offset="0.1515645941378705" />
+                        <Stop color="#ffdd00" offset="0.21280445945848855" />
+                        <Stop color="#ffe000" offset="0.45797010663714227" />
+                        <Stop color="RED" offset="0.5253059661401727" />
+                        <Stop color="RED" offset="0.8285865010899982" />
+                        <Stop color="BLACK" offset="0.8745935551541276" />
+                        <Stop color="BLACK" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
