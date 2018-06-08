@@ -7,7 +7,9 @@ import br.edu.unoesc.models.Categoria;
 
 public class CategoriaArquivo implements CategoriaDAO {
 
-	private CuidaDosArquivos<Categoria> arqui = new CuidaDosArquivos<>("categoria.ser");
+	private static final String CATEGORIA_SER = "categoria.ser";
+
+	private CuidaDosArquivos<Categoria> arqui = new CuidaDosArquivos<>(CATEGORIA_SER);
 
 	@Override
 	public void inserir(Categoria categoria) {
