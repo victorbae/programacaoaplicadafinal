@@ -3,8 +3,7 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
-import br.edu.unoesc.banco.CategoriaBanco;
-import br.edu.unoesc.banco.ProdutoBanco;
+import br.edu.unoesc.arquivos.ProdutoArquivo;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaCategorias;
@@ -44,14 +43,13 @@ public class CategoriaController {
 
 	private Categoria categoria = new Categoria();
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
-	private CategoriaDAO categoriabd = new CategoriaBanco(); /// Meche no Banco
-	private ProdutoDAO produtobd = new ProdutoBanco();
+	private ProdutoDAO produtobd = new ProdutoArquivo();
 
 	@FXML
 	private void initialize() {
 		tcId.setCellValueFactory(new PropertyValueFactory<Categoria, Integer>("codigo"));
 		tcNome.setCellValueFactory(new PropertyValueFactory<Categoria, String>("nome"));
-		tvCategoria.setItems(FXCollections.observableArrayList(categoriabd.listar()));
+		tvCategoria.setItems(FXCollections.observableArrayList(categoriadao.listar()));
 	}
 
 	@FXML
@@ -83,7 +81,7 @@ public class CategoriaController {
 	void Excluir(ActionEvent event) {
 		montaCategoria();
 		if (verificaSePodeExcluir()) {
-			categoriabd.excluir(categoria);
+			categoriadao.excluir(categoria);
 			categoriadao.excluir(this.categoria);
 			tvCategoria.getItems().remove(categoria);
 			tvCategoria.refresh();

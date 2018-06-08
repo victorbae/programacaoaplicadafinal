@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
-import br.edu.unoesc.banco.CategoriaBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.models.Categoria;
 import br.edu.unoesc.models.CategoriaBuilder;
@@ -28,14 +27,12 @@ public class CadastroCategoriaController {
 	private Button btnCancelar;
 	private Categoria categoria;
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
-	private CategoriaDAO categoriabd = new CategoriaBanco(); /// Meche no Banco
 	private List<Categoria> categorias;
 
 	@FXML
 	void Salvar(ActionEvent event) {
 		populaCategoria();
 		categoriadao.inserir(this.categoria);
-		categoriabd.inserir(this.categoria); /// Salva no Banco
 		voltaTelaCategoria();
 	}
 

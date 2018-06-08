@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.arquivos.FuncionarioArquivo;
-import br.edu.unoesc.banco.FuncionarioBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFuncionarios;
@@ -50,7 +49,6 @@ public class AlterarFuncionarioController {
 	private FilialDAO filialdao = new FilialArquivo();
 	private Funcionario funcionarioalt = new Funcionario();
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
-	private FuncionarioBanco funcionariobd = new FuncionarioBanco();
 
 	@FXML
 	private void initialize() {
@@ -63,7 +61,6 @@ public class AlterarFuncionarioController {
 	void salvar(ActionEvent event) {
 		montarFuncionarioParaAdd();
 		funcionariodao.alterar(funcionarioalt);
-		funcionariobd.alterar(funcionarioalt);
 		voltarTela();
 	}
 

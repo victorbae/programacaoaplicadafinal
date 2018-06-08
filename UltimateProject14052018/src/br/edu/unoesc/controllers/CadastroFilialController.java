@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
-import br.edu.unoesc.banco.FilialBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.models.Filial;
 import br.edu.unoesc.models.FilialBuilder;
@@ -38,14 +37,12 @@ public class CadastroFilialController {
 
 	private Filial filial = new Filial();
 	private FilialDAO filialdao = new FilialArquivo();
-	private FilialDAO filialbd = new FilialBanco();
 	private List<Filial> filiais;
 
 	@FXML
 	void addFilial(ActionEvent event) {
 		montarFilialParaAdd();
 		filialdao.inserir(filial);
-		filialbd.inserir(filial);
 		voltaTelaFilial();
 	}
 
@@ -73,7 +70,7 @@ public class CadastroFilialController {
 
 	Integer geraCodFilial() {
 		int aux = 0;
-		filiais = filialbd.listar();
+		filiais = filialdao.listar();
 		for (Filial filialss : filiais) {
 			if (filialss.getCodFilial() == null) {
 				return 1;

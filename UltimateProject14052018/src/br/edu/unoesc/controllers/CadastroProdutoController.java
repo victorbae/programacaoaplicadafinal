@@ -3,10 +3,8 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import br.edu.unoesc.arquivos.CategoriaArquivo;
 import br.edu.unoesc.arquivos.ProdutoArquivo;
-import br.edu.unoesc.banco.CategoriaBanco;
-import br.edu.unoesc.banco.ProdutoBanco;
-import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.models.Categoria;
 import br.edu.unoesc.models.Produto;
@@ -44,10 +42,8 @@ public class CadastroProdutoController {
 
 	private Produto produto;
 	private ProdutoDAO produtodao = new ProdutoArquivo();
-	private ProdutoDAO produtobd = new ProdutoBanco(); /// Meche no Banco
+	private CategoriaArquivo categoriadao = new CategoriaArquivo();
 
-	// private CategoriaDAO categoriadao = new CategoriaArquivo();
-	private CategoriaDAO categoriabd = new CategoriaBanco();
 	private List<Produto> produtos;
 
 	@FXML
@@ -66,7 +62,6 @@ public class CadastroProdutoController {
 	void salvar(ActionEvent event) {
 		populaProduto();
 		produtodao.inserir(this.produto);
-		produtobd.inserir(this.produto); /// Salva no Banco
 		voltaTelaProduto();
 
 	}
@@ -79,7 +74,7 @@ public class CadastroProdutoController {
 	}
 
 	private void populaCombo() {
-		for (Categoria categoria : categoriabd.listar()) {
+		for (Categoria categoria : categoriadao.listar()) {
 			cbxCategoria.getItems().add(categoria);
 		}
 	}
@@ -98,7 +93,7 @@ public class CadastroProdutoController {
 
 	Integer geraCodProduto() {
 		int aux = 0;
-		produtos = produtobd.listar();
+		produtos = produtodao.listar();
 		if (produtos == null) {
 			return 1;
 		}

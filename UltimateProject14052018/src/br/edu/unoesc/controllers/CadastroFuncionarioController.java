@@ -5,7 +5,6 @@ import java.util.List;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.arquivos.FuncionarioArquivo;
-import br.edu.unoesc.banco.FuncionarioBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.models.Filial;
@@ -48,7 +47,6 @@ public class CadastroFuncionarioController {
 
 	private Funcionario funcionario = new Funcionario();
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
-	private FuncionarioDAO funcionariobd = new FuncionarioBanco();
 	private FilialDAO filialdao = new FilialArquivo();
 	private List<Funcionario> funcionarios;
 
@@ -67,7 +65,6 @@ public class CadastroFuncionarioController {
 	void salvar(ActionEvent event) {
 		populaFuncionario();
 		funcionariodao.inserir(this.funcionario);
-		funcionariobd.inserir(this.funcionario); /// Salva no Banco
 		voltaTelaFuncionario();
 	}
 
@@ -97,7 +94,7 @@ public class CadastroFuncionarioController {
 
 	Integer geraCodFuncionario() {
 		int aux = 0;
-		funcionarios = funcionariobd.listar();
+		funcionarios = funcionariodao.listar();
 		if (funcionarios == null) {
 			return 1;
 		}

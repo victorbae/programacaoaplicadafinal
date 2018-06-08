@@ -1,6 +1,6 @@
 package br.edu.unoesc.tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -31,4 +31,17 @@ public class CategoriaTest {
 		assertEquals(categoria.getNome(), categoria.toString());
 	}
 
+	@Test
+	public void deveTestarEqualsEHashCode() throws Exception {
+		Categoria categoria1 = new Categoria(1, "teste1");
+		Categoria categoria2 = new Categoria(1, "teste1");
+		Categoria categoria3 = new Categoria(2, "teste2");
+		Categoria categoria4 = new Categoria();
+
+		assertEquals(categoria1.hashCode(), categoria2.hashCode());
+		assertTrue(categoria1.equals(categoria2));
+		assertFalse(categoria1.hashCode() == categoria3.hashCode());
+		assertFalse(categoria1.equals(categoria3));
+		assertFalse(categoria1.equals(categoria4));
+	}
 }

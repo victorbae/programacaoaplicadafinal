@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import br.edu.unoesc.arquivos.FuncionarioArquivo;
-import br.edu.unoesc.banco.FuncionarioBanco;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFuncionarios;
 import br.edu.unoesc.models.Filial;
@@ -58,7 +57,6 @@ public class FuncionarioController {
 
 	private Funcionario funcionario;
 	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
-	private FuncionarioBanco funcionariobd = new FuncionarioBanco();
 
 	@FXML
 	private void initialize() {
@@ -69,14 +67,13 @@ public class FuncionarioController {
 		tbcTelefone.setCellValueFactory(new PropertyValueFactory<Funcionario, Long>("telefone"));
 		tbcFiilial.setCellValueFactory(new PropertyValueFactory<Funcionario, Filial>("filial"));
 		tcCodigo.setCellValueFactory(new PropertyValueFactory<Funcionario, Integer>("codigo"));
-		tvfuncionario.setItems(FXCollections.observableArrayList(funcionariobd.listar()));
+		tvfuncionario.setItems(FXCollections.observableArrayList(funcionariodao.listar()));
 	}
 
 	@FXML
 	void Excluir(ActionEvent event) {
 		montaFuncionario();
 		funcionariodao.excluir(funcionario);
-		funcionariobd.excluir(funcionario);
 		tvfuncionario.refresh();
 		initialize();
 	}

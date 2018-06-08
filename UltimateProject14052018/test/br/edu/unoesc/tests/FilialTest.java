@@ -1,9 +1,12 @@
 package br.edu.unoesc.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import br.edu.unoesc.models.Categoria;
 import br.edu.unoesc.models.Filial;
 
 public class FilialTest {
@@ -52,5 +55,19 @@ public class FilialTest {
 		filial.setTelefone(Long.valueOf(12345679));
 
 		assertEquals(Long.valueOf(12345679), filial.getTelefone());
+	}
+
+	@Test
+	public void deveTestarEqualsEHashCode() throws Exception {
+		Filial filial1 = new Filial(1, "teste1", "teste1", "teste1", Long.valueOf(123456789));
+		Filial filial2 = new Filial(1, "teste1", "teste1", "teste1", Long.valueOf(123456789));
+		Filial filial3 = new Filial(2, "teste2", "teste2", "teste2", Long.valueOf(123456789));
+		Filial filial4 = new Filial();
+
+		assertEquals(filial1.hashCode(), filial2.hashCode());
+		assertTrue(filial1.equals(filial2));
+		assertFalse(filial1.hashCode() == filial3.hashCode());
+		assertFalse(filial1.equals(filial3));
+		assertFalse(filial1.equals(filial4));
 	}
 }

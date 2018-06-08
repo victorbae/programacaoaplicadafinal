@@ -3,7 +3,6 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
-import br.edu.unoesc.banco.CategoriaBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaCategorias;
 import br.edu.unoesc.models.Categoria;
@@ -33,7 +32,6 @@ public class AlterarCategoriaController {
 
 	private Categoria categoriaalt = new Categoria();
 	private CategoriaDAO categoriadao = new CategoriaArquivo();
-	private CategoriaDAO categoriabd = new CategoriaBanco();
 
 	@FXML
 	private void initialize() {
@@ -50,7 +48,6 @@ public class AlterarCategoriaController {
 	void Salvar(ActionEvent event) {
 		montaCategoriaParaAdd();
 		categoriadao.alterar(categoriaalt);
-		categoriabd.alterar(categoriaalt);
 		voltaTelaCategoria();
 	}
 

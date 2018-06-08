@@ -3,8 +3,7 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
-import br.edu.unoesc.banco.FilialBanco;
-import br.edu.unoesc.banco.FuncionarioBanco;
+import br.edu.unoesc.arquivos.FuncionarioArquivo;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFiliais;
@@ -51,10 +50,8 @@ public class FilialController {
 	private Button btAlterarFilial;
 
 	private FilialDAO filialdao = new FilialArquivo();
+	private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
 	private Filial filial = new Filial();
-	// private FuncionarioDAO funcionariodao = new FuncionarioArquivo();
-	private FuncionarioDAO funcionariobd = new FuncionarioBanco();
-	private FilialDAO filialbd = new FilialBanco(); /// Meche no Banco
 
 	@FXML
 	private void initialize() {
@@ -63,7 +60,7 @@ public class FilialController {
 		tblCidade.setCellValueFactory(new PropertyValueFactory<Filial, String>("cidade"));
 		tblEndereco.setCellValueFactory(new PropertyValueFactory<Filial, String>("endereco"));
 		tblTelefone.setCellValueFactory(new PropertyValueFactory<Filial, Long>("telefone"));
-		tblFiliais.setItems(FXCollections.observableArrayList(filialbd.listar()));
+		tblFiliais.setItems(FXCollections.observableArrayList(filialdao.listar()));
 	}
 
 	@FXML
@@ -85,7 +82,6 @@ public class FilialController {
 		montaFilial();
 		if (verificaSePodeExcluir()) {
 			filialdao.excluir(filial);
-			filialbd.excluir(filial); /// Exclui no Banco
 			tblFiliais.refresh();
 			initialize();
 		} else {
@@ -110,7 +106,7 @@ public class FilialController {
 	}
 
 	boolean verificaSePodeExcluir() {
-		for (Funcionario funcionario : funcionariobd.listar()) {
+		for (Funcionario funcionario : funcionariodao.listar()) {
 			if (funcionario.getFilial().getCodFilial().equals(filial.getCodFilial())) {
 				return false;
 			}

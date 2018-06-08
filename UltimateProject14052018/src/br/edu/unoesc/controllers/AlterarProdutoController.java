@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
 import br.edu.unoesc.arquivos.ProdutoArquivo;
-import br.edu.unoesc.banco.ProdutoBanco;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaProdutos;
@@ -47,7 +46,6 @@ public class AlterarProdutoController {
 
 	private Produto produtoalt = new Produto();
 	private ProdutoDAO produtodao = new ProdutoArquivo();
-	private ProdutoBanco produtobd = new ProdutoBanco();
 
 	@FXML
 	private void initialize() {
@@ -60,7 +58,6 @@ public class AlterarProdutoController {
 	@FXML
 	void salvar(ActionEvent event) {
 		montarProdutoParaAdd();
-		produtobd.alterar(produtoalt);
 		produtodao.alterar(produtoalt);
 		voltarTela();
 

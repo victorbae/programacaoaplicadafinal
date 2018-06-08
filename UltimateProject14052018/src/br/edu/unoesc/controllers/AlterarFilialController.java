@@ -3,7 +3,6 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
-import br.edu.unoesc.banco.FilialBanco;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFiliais;
 import br.edu.unoesc.models.Filial;
@@ -38,7 +37,6 @@ public class AlterarFilialController {
 
 	private Filial filialalt = new Filial();
 	private FilialDAO filialdao = new FilialArquivo();
-	private FilialBanco filialbd = new FilialBanco();
 
 	@FXML
 	private void initialize() {
@@ -72,7 +70,6 @@ public class AlterarFilialController {
 	void salvarFilial(ActionEvent event) {
 		montarFilialParaAdd();
 		filialdao.alterar(filialalt);
-		filialbd.alterar(filialalt);
 		voltarTela();
 	}
 

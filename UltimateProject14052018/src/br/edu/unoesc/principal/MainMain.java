@@ -2,7 +2,6 @@ package br.edu.unoesc.principal;
 
 import java.sql.SQLException;
 
-import br.edu.unoesc.banco.MecheNoBanco;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaFiliais;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +35,6 @@ public class MainMain extends Application {
 	}
 
 	public static void main(String[] args) throws SQLException {
-		MecheNoBanco.abreconexao();
 		launch(args);
 	}
 

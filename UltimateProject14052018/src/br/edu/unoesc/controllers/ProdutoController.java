@@ -3,7 +3,6 @@ package br.edu.unoesc.controllers;
 import java.io.IOException;
 
 import br.edu.unoesc.arquivos.ProdutoArquivo;
-import br.edu.unoesc.banco.ProdutoBanco;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.estaticosparatelasv.EstaticosParaProdutos;
 import br.edu.unoesc.models.Categoria;
@@ -54,7 +53,6 @@ public class ProdutoController {
 
 	private Produto produto;
 	private ProdutoDAO produtodao = new ProdutoArquivo();
-	private ProdutoBanco produtobd = new ProdutoBanco();
 
 	@FXML
 	private void initialize() {
@@ -64,7 +62,7 @@ public class ProdutoController {
 		tbcQuantidadeEstoque.setCellValueFactory(new PropertyValueFactory<Produto, Integer>("quantidadeestoque"));
 		tbcCodigo.setCellValueFactory(new PropertyValueFactory<Produto, Integer>("codigo"));
 		tbcDescricao.setCellValueFactory(new PropertyValueFactory<Produto, String>("descricao"));
-		tvproduto.setItems(FXCollections.observableArrayList(produtobd.listar()));
+		tvproduto.setItems(FXCollections.observableArrayList(produtodao.listar()));
 	}
 
 	@FXML
@@ -86,7 +84,6 @@ public class ProdutoController {
 	void Excluir(ActionEvent event) {
 		montaProduto();
 		produtodao.excluir(produto);
-		produtobd.excluir(produto); /// Exclui no Banco
 		tvproduto.refresh();
 		initialize();
 
