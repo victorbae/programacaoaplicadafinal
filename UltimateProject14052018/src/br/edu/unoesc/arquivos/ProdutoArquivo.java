@@ -7,7 +7,17 @@ import br.edu.unoesc.models.Produto;
 
 public class ProdutoArquivo implements ProdutoDAO {
 
-	private CuidaDosArquivos<Produto> arqui = new CuidaDosArquivos<>("produto.ser");
+	private static final String PRODUTO_SER = "produto.ser";
+
+	private CuidaDosArquivos<Produto> arqui;
+
+	public ProdutoArquivo() {
+		arqui = new CuidaDosArquivos<>(PRODUTO_SER);
+	}
+
+	public ProdutoArquivo(String arquivo) {
+		arqui = new CuidaDosArquivos<>(arquivo);
+	}
 
 	public void inserir(Produto produto) {
 		List<Produto> produtos = arqui.recuperar();

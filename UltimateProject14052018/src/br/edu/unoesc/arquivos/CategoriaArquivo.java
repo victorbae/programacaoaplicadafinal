@@ -9,7 +9,15 @@ public class CategoriaArquivo implements CategoriaDAO {
 
 	private static final String CATEGORIA_SER = "categoria.ser";
 
-	private CuidaDosArquivos<Categoria> arqui = new CuidaDosArquivos<>(CATEGORIA_SER);
+	private CuidaDosArquivos<Categoria> arqui;
+
+	public CategoriaArquivo() {
+		arqui = new CuidaDosArquivos<>(CATEGORIA_SER);
+	}
+
+	public CategoriaArquivo(String arquivo) {
+		arqui = new CuidaDosArquivos<>(arquivo);
+	}
 
 	@Override
 	public void inserir(Categoria categoria) {

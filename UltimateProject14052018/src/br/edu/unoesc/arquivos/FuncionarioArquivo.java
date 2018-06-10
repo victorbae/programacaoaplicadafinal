@@ -7,7 +7,17 @@ import br.edu.unoesc.models.Funcionario;
 
 public class FuncionarioArquivo implements FuncionarioDAO {
 
-	private CuidaDosArquivos<Funcionario> arqui = new CuidaDosArquivos<>("funcionario.ser");
+	private static final String FUNCIONARIO_SER = "funcionario.ser";
+
+	private CuidaDosArquivos<Funcionario> arqui;
+
+	public FuncionarioArquivo() {
+		arqui = new CuidaDosArquivos<>(FUNCIONARIO_SER);
+	}
+
+	public FuncionarioArquivo(String arquivo) {
+		arqui = new CuidaDosArquivos<>(arquivo);
+	}
 
 	public void inserir(Funcionario funcionario) {
 		List<Funcionario> funcionarios = arqui.recuperar();

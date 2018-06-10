@@ -7,7 +7,17 @@ import br.edu.unoesc.models.Filial;
 
 public class FilialArquivo implements FilialDAO {
 
-	private CuidaDosArquivos<Filial> arqui = new CuidaDosArquivos<>("filial.ser");
+	private static final String FILIAL_SER = "filial.ser";
+
+	private CuidaDosArquivos<Filial> arqui;
+
+	public FilialArquivo() {
+		arqui = new CuidaDosArquivos<>(FILIAL_SER);
+	}
+
+	public FilialArquivo(String arquivo) {
+		arqui = new CuidaDosArquivos<>(arquivo);
+	}
 
 	public void inserir(Filial filial) {
 		List<Filial> filials = arqui.recuperar();
