@@ -1,7 +1,10 @@
 package br.edu.unoesc.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
@@ -39,7 +42,7 @@ public class FilialArquivoTeste {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FilialDAO ff = new FilialArquivo("filialteste.ser");
+		FilialDAO ff = new FilialArquivo("filialtesteAlt.ser");
 		Filial fil1 = new Filial();
 
 		fil1.setNome("filial");
@@ -48,6 +51,11 @@ public class FilialArquivoTeste {
 		fil1.setNome("filial2");
 		ff.alterar(fil1);
 
-		assertTrue(ff.listar().contains(fil1));
+		List<Filial> lista = ff.listar();
+
+		for (Filial filial : lista) {
+			assertEquals(filial.getNome(), "filial2");
+		}
+		ff.listar().clear();
 	}
 }

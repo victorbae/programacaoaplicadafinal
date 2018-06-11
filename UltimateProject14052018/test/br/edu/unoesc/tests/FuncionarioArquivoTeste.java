@@ -1,7 +1,10 @@
 package br.edu.unoesc.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
@@ -39,7 +42,7 @@ public class FuncionarioArquivoTeste {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FuncionarioDAO ff = new FuncionarioArquivo("funcionarioteste.ser");
+		FuncionarioDAO ff = new FuncionarioArquivo("funcionariotesteAlt.ser");
 		Funcionario fun = new Funcionario();
 
 		fun.setNome("funcionario");
@@ -48,6 +51,11 @@ public class FuncionarioArquivoTeste {
 		fun.setNome("funcionario2");
 		ff.alterar(fun);
 
-		assertTrue(ff.listar().contains(fun));
+		List<Funcionario> lista = ff.listar();
+
+		for (Funcionario func : lista) {
+			assertEquals(func.getNome(), "funcionario2");
+		}
+		ff.listar().clear();
 	}
 }

@@ -28,7 +28,7 @@ public class FilialArquivo implements FilialDAO {
 	public void alterar(Filial filial) {
 		List<Filial> filials = arqui.recuperar();
 		for (Filial filialArquivo : filials) {
-			if (filialArquivo.equals(filial)) {
+			if (filialArquivo.getCodFilial() == filial.getCodFilial()) {
 				filials.remove(filialArquivo);
 				filials.add(filial);
 				break;

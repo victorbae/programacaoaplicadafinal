@@ -1,7 +1,10 @@
 package br.edu.unoesc.tests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
@@ -39,7 +42,7 @@ public class ProdutoArquivoTest {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		ProdutoDAO pd = new ProdutoArquivo("produtoteste.ser");
+		ProdutoDAO pd = new ProdutoArquivo("produtotesteAlt.ser");
 		Produto prod = new Produto();
 
 		prod.setNome("produto");
@@ -48,7 +51,13 @@ public class ProdutoArquivoTest {
 		prod.setNome("produto2");
 		pd.alterar(prod);
 
-		assertTrue(pd.listar().contains(prod));
+		List<Produto> lista = pd.listar();
+
+		for (Produto produ : lista) {
+			assertEquals(produ.getNome(), "produto2");
+		}
+
+		pd.listar().clear();
 	}
 
 }

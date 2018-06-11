@@ -28,7 +28,7 @@ public class ProdutoArquivo implements ProdutoDAO {
 	public void alterar(Produto produto) {
 		List<Produto> produtos = arqui.recuperar();
 		for (Produto produtoArquivo : produtos) {
-			if (produtoArquivo.equals(produto)) {
+			if (produtoArquivo.getCodigo() == produto.getCodigo()) {
 				produtos.remove(produtoArquivo);
 				produtos.add(produto);
 				break;

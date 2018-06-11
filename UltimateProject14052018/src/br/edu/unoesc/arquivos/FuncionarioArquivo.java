@@ -28,7 +28,7 @@ public class FuncionarioArquivo implements FuncionarioDAO {
 	public void alterar(Funcionario funcionario) {
 		List<Funcionario> funcionarios = arqui.recuperar();
 		for (Funcionario funcionarioArquivo : funcionarios) {
-			if (funcionarioArquivo.equals(funcionario)) {
+			if (funcionarioArquivo.getCodigo() == funcionario.getCodigo()) {
 				funcionarios.remove(funcionarioArquivo);
 				funcionarios.add(funcionario);
 				break;

@@ -30,7 +30,7 @@ public class CategoriaArquivo implements CategoriaDAO {
 	public void alterar(Categoria categoria) {
 		List<Categoria> categorias = arqui.recuperar();
 		for (Categoria categoriaArquivo : categorias) {
-			if (categoriaArquivo.equals(categoria)) {
+			if (categoriaArquivo.getCodigo() == categoria.getCodigo()) {
 				categorias.remove(categoriaArquivo);
 				categorias.add(categoria);
 				break;
