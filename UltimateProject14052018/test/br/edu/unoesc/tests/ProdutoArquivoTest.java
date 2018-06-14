@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.unoesc.arquivos.ProdutoArquivo;
@@ -20,10 +21,17 @@ public class ProdutoArquivoTest extends AbstractLimpaArquivo {
 		return "produtoteste.ser";
 	}
 
+	ProdutoDAO pd;
+	Produto prod;
+
+	@Before
+	public void intaciaObjeto() {
+		pd = new ProdutoArquivo("produtoteste.ser");
+		prod = new Produto();
+	}
+
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
-		ProdutoDAO pd = new ProdutoArquivo("produtoteste.ser");
-		Produto prod = new Produto();
 
 		pd.inserir(prod);
 
@@ -36,8 +44,6 @@ public class ProdutoArquivoTest extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarExclusaoNoArquivo() throws Exception {
-		ProdutoDAO pd = new ProdutoArquivo("produtoteste.ser");
-		Produto prod = new Produto();
 
 		pd.inserir(prod);
 
@@ -48,8 +54,6 @@ public class ProdutoArquivoTest extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		ProdutoDAO pd = new ProdutoArquivo("produtoteste.ser");
-		Produto prod = new Produto();
 
 		prod.setNome("produto");
 		pd.inserir(prod);

@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.unoesc.arquivos.CategoriaArquivo;
@@ -20,10 +21,17 @@ public class CategoriaArquivoTest extends AbstractLimpaArquivo {
 		return "categoriateste.ser";
 	}
 
+	CategoriaDAO ct;
+	Categoria cat;
+
+	@Before
+	public void intanciaObjeto() {
+		ct = new CategoriaArquivo("categoriateste.ser");
+		cat = new Categoria();
+	}
+
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
-		CategoriaDAO ct = new CategoriaArquivo("categoriateste.ser");
-		Categoria cat = new Categoria();
 
 		ct.inserir(cat);
 
@@ -36,8 +44,6 @@ public class CategoriaArquivoTest extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarExclusaoNoArquivo() throws Exception {
-		CategoriaDAO ct = new CategoriaArquivo("categoriateste.ser");
-		Categoria cat = new Categoria();
 
 		ct.inserir(cat);
 
@@ -48,9 +54,6 @@ public class CategoriaArquivoTest extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		CategoriaDAO ct = new CategoriaArquivo("categoriateste.ser");
-		Categoria cat = new Categoria();
-		Categoria cat3 = new Categoria();
 
 		cat.setNome("categoria");
 		ct.inserir(cat);

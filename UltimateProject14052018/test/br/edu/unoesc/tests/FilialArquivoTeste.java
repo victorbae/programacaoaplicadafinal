@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.unoesc.arquivos.FilialArquivo;
@@ -20,10 +21,17 @@ public class FilialArquivoTeste extends AbstractLimpaArquivo {
 		return "filialteste.ser";
 	}
 
+	FilialDAO ff;
+	Filial fil3;
+
+	@Before
+	public void intanciaObjeto() {
+		ff = new FilialArquivo("filialteste.ser");
+		fil3 = new Filial();
+	}
+
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
-		FilialDAO ff = new FilialArquivo("filialteste.ser");
-		Filial fil3 = new Filial();
 
 		ff.inserir(fil3);
 
@@ -36,26 +44,22 @@ public class FilialArquivoTeste extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarExclusaoNoArquivo() throws Exception {
-		FilialDAO ff = new FilialArquivo("filialteste.ser");
-		Filial fil = new Filial();
 
-		ff.inserir(fil);
+		ff.inserir(fil3);
 
-		ff.excluir(fil);
+		ff.excluir(fil3);
 
-		assertFalse(ff.listar().contains(fil));
+		assertFalse(ff.listar().contains(fil3));
 	}
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FilialDAO ff = new FilialArquivo("filialteste.ser");
-		Filial fil1 = new Filial();
 
-		fil1.setNome("filial");
-		ff.inserir(fil1);
+		fil3.setNome("filial");
+		ff.inserir(fil3);
 
-		fil1.setNome("filial2");
-		ff.alterar(fil1);
+		fil3.setNome("filial2");
+		ff.alterar(fil3);
 
 		List<Filial> lista = ff.listar();
 

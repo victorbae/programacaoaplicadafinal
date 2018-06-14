@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.edu.unoesc.arquivos.FuncionarioArquivo;
@@ -20,10 +21,17 @@ public class FuncionarioArquivoTeste extends AbstractLimpaArquivo {
 		return "funcionarioteste.ser";
 	}
 
+	FuncionarioDAO ff;
+	Funcionario fun;
+
+	@Before
+	public void intanciaObjeto() {
+		ff = new FuncionarioArquivo("funcionarioteste.ser");
+		fun = new Funcionario();
+	}
+
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
-		FuncionarioDAO ff = new FuncionarioArquivo("funcionarioteste.ser");
-		Funcionario fun = new Funcionario();
 
 		ff.inserir(fun);
 
@@ -36,8 +44,6 @@ public class FuncionarioArquivoTeste extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarExclusaoNoArquivo() throws Exception {
-		FuncionarioDAO ff = new FuncionarioArquivo("funcionarioteste.ser");
-		Funcionario fun = new Funcionario();
 
 		ff.inserir(fun);
 
@@ -48,8 +54,6 @@ public class FuncionarioArquivoTeste extends AbstractLimpaArquivo {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FuncionarioDAO ff = new FuncionarioArquivo("funcionarioteste.ser");
-		Funcionario fun = new Funcionario();
 
 		fun.setNome("funcionario");
 		ff.inserir(fun);
