@@ -12,7 +12,13 @@ import br.edu.unoesc.arquivos.ProdutoArquivo;
 import br.edu.unoesc.daos.ProdutoDAO;
 import br.edu.unoesc.models.Produto;
 
-public class ProdutoArquivoTest {
+public class ProdutoArquivoTest extends AbstractLimpaArquivo {
+
+	@Override
+	String getNomeArquivo() {
+		// TODO Auto-generated method stub
+		return "produtoteste.ser";
+	}
 
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
@@ -42,7 +48,7 @@ public class ProdutoArquivoTest {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		ProdutoDAO pd = new ProdutoArquivo("produtotesteAlt.ser");
+		ProdutoDAO pd = new ProdutoArquivo("produtoteste.ser");
 		Produto prod = new Produto();
 
 		prod.setNome("produto");

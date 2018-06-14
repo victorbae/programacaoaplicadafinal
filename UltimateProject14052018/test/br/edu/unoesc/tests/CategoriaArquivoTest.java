@@ -12,7 +12,13 @@ import br.edu.unoesc.arquivos.CategoriaArquivo;
 import br.edu.unoesc.daos.CategoriaDAO;
 import br.edu.unoesc.models.Categoria;
 
-public class CategoriaArquivoTest {
+public class CategoriaArquivoTest extends AbstractLimpaArquivo {
+
+	@Override
+	String getNomeArquivo() {
+		// TODO Auto-generated method stub
+		return "categoriateste.ser";
+	}
 
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
@@ -42,7 +48,7 @@ public class CategoriaArquivoTest {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		CategoriaDAO ct = new CategoriaArquivo("categoriatesteAlt.ser");
+		CategoriaDAO ct = new CategoriaArquivo("categoriateste.ser");
 		Categoria cat = new Categoria();
 		Categoria cat3 = new Categoria();
 

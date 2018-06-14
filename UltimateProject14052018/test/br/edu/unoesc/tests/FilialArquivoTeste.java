@@ -12,7 +12,13 @@ import br.edu.unoesc.arquivos.FilialArquivo;
 import br.edu.unoesc.daos.FilialDAO;
 import br.edu.unoesc.models.Filial;
 
-public class FilialArquivoTeste {
+public class FilialArquivoTeste extends AbstractLimpaArquivo {
+
+	@Override
+	String getNomeArquivo() {
+		// TODO Auto-generated method stub
+		return "filialteste.ser";
+	}
 
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
@@ -42,7 +48,7 @@ public class FilialArquivoTeste {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FilialDAO ff = new FilialArquivo("filialtesteAlt.ser");
+		FilialDAO ff = new FilialArquivo("filialteste.ser");
 		Filial fil1 = new Filial();
 
 		fil1.setNome("filial");
@@ -58,4 +64,5 @@ public class FilialArquivoTeste {
 		}
 		ff.listar().clear();
 	}
+
 }

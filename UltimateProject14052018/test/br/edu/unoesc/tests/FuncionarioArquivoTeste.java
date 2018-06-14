@@ -12,7 +12,13 @@ import br.edu.unoesc.arquivos.FuncionarioArquivo;
 import br.edu.unoesc.daos.FuncionarioDAO;
 import br.edu.unoesc.models.Funcionario;
 
-public class FuncionarioArquivoTeste {
+public class FuncionarioArquivoTeste extends AbstractLimpaArquivo {
+
+	@Override
+	String getNomeArquivo() {
+		// TODO Auto-generated method stub
+		return "funcionarioteste.ser";
+	}
 
 	@Test
 	public void devetestarInsercaoNoArquivo() throws Exception {
@@ -42,7 +48,7 @@ public class FuncionarioArquivoTeste {
 
 	@Test
 	public void devetestarAlterarNoArquivo() throws Exception {
-		FuncionarioDAO ff = new FuncionarioArquivo("funcionariotesteAlt.ser");
+		FuncionarioDAO ff = new FuncionarioArquivo("funcionarioteste.ser");
 		Funcionario fun = new Funcionario();
 
 		fun.setNome("funcionario");
